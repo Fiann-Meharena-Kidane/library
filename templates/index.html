@@ -1,0 +1,71 @@
+{% extends "bootstrap/base.html" %}
+<!--applies bootstrap codes,-->
+
+{% block content %}
+<!--we are using block template ? -->
+
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Library</title>
+        </head>
+        <body style="text-align:center; padding:5px">
+        <h1> My Library </h1>
+
+
+                {% if books %}
+        <!--        if list of book has books( is not empty)-->
+
+                <table class="table table-hover table-striped">
+
+                    <tbody>
+
+                             {% for book in books %}
+<!--                             for each book , we display it in row of table, -->
+                                    <tr>
+                                          <th scope="row">{{ books.index(book) +1 }}</th>
+
+                                          <td><a href="{{ url_for('delete', book_id=book.id) }}"
+                                            class="btn btn-danger"> Delete Book </a></td>
+
+                                          <td>{{ book.title }}</td>
+                                          <td>{{ book.author }}</td>
+                                          <td>{{ book.rating }}</td>
+                                          <td><a href="{{ url_for('edit', id=book.id) }}" class="btn btn-primary"> Edit Rating</a></td>
+
+                                    </tr>
+                             {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+                {% else %}
+        <!--        else if list of books is empty, infrom user, -->
+                        <p>Library is Empty</p>
+                {% endif %}
+
+                <a  href="{{ url_for('add') }}" class="btn btn-primary btn-lg" >Add New Book</a>
+        </body>
+    </html>
+
+{% endblock %}
+
+
+
+
+<!--                         <ol>-->
+<!--                            {% for book in books %}-->
+<!--        &lt;!&ndash;                     # for each book display its details in a line, &ndash;&gt;-->
+
+<!--                                <li> <a href="{{ url_for('delete', book_id=book.id) }}"-->
+<!--                                        class="btn btn-danger" data-toggle="button"> Delete Book </a>-->
+<!--                                     -{{ book.title }}-->
+<!--                                    - {{ book.author }}-->
+<!--                                    - {{ book.rating }}-->
+<!--                                    - <a href="{{ url_for('edit', id=book.id) }}" class="btn btn-primary"> Edit Rating</a>-->
+
+<!--                                </li> <br>-->
+
+<!--                            {% endfor %}-->
+<!--                         </ol>-->
