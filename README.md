@@ -1,4 +1,4 @@
-# A Web app with list books read 
+# A Web app with list of books read 
 
 ## User can list books he/she read over time. 
 
