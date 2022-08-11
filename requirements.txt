@@ -1,4 +1,4 @@
-web: gunicorn main:app
+web: gunicorn app:main
 appdirs==1.4.4
 async-generator==1.10
 async-timeout==4.0.2
