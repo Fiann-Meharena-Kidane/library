@@ -1,3 +1,4 @@
+
 {% extends "bootstrap/base.html" %}
 <!--applies bootstrap codes,-->
 
@@ -8,15 +9,17 @@
         <head>
             <meta charset="UTF-8">
             <title>Library</title>
+            <link rel="icon" type="image/x-icon" href="/images/favicon.ico">>
+
         </head>
-        <body style="text-align:center; padding:5px">
+        <body style="text-align:center; padding:5px; background-color:#ccb26a;">
         <h1> My Library </h1>
 
 
                 {% if books %}
         <!--        if list of book has books( is not empty)-->
 
-                <table class="table table-hover table-striped">
+                <table class="table table-hover">
 
                     <tbody>
 
@@ -69,3 +72,5 @@
 
 <!--                            {% endfor %}-->
 <!--                         </ol>-->
+
+
