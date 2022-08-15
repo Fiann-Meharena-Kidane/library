@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+web: gunicorn main:app
+>>>>>>> 7e46f60e4367632ae887c1ef8a32f5898d7b247a
 appdirs==1.4.4
 async-generator==1.10
 async-timeout==4.0.2
